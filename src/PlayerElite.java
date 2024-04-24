@@ -1,7 +1,6 @@
-public class PlayerElite {
+public class PlayerElite extends Personagem {
     
     private String classe;
-    private int defesa;
     private int ataque;
     
     public String getClasse() {
@@ -10,12 +9,6 @@ public class PlayerElite {
     public void setClasse(String classe) {
         this.classe = classe;
     }
-    public int getDefesa() {
-        return defesa;
-    }
-    public void setDefesa(int defesa) {
-        this.defesa = defesa;
-    }
     public int getAtaque() {
         return ataque;
     }
@@ -23,9 +16,9 @@ public class PlayerElite {
         this.ataque = ataque;
     }
 
-    public PlayerElite(String classe, int defesa, int ataque) {
+    public PlayerElite(String nome, int idade, int vida, String falaPersonagem, String classe, int ataque) {
+        super(nome, idade, vida, falaPersonagem);
         this.classe = classe;
-        this.defesa = defesa;
         this.ataque = ataque;
     }
 
@@ -35,10 +28,7 @@ public class PlayerElite {
 
     @Override
     public String toString() {
-        return super.toString() + "\nclasse=" + classe + ", defesa=" + defesa + ", ataque=" + ataque + "]";
+        return super.toString() + "\nclasse=" + classe + ", ataque=" + ataque + "]";
     }
-
-    
-    
 
 }

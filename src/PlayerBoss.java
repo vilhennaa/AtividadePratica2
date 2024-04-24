@@ -1,26 +1,38 @@
-public class PlayerBoss {
+public class PlayerBoss extends Personagem {
 
-    private String superpoder;
+    private String ataqueEspecial;
+    private int danoAtaqueEspecial;
 
-    public String getSuperpoder() {
-        return superpoder;
+    public String getAtaqueEspecial() {
+        return ataqueEspecial;
     }
 
-    public void setSuperpoder(String superpoder) {
-        this.superpoder = superpoder;
+    public void setAtaqueEspecial(String ataqueEspecial) {
+        this.ataqueEspecial = ataqueEspecial;
+    }
+
+    public int getDanoAtaqueEspecial() {
+        return danoAtaqueEspecial;
+    }
+
+    public void setDanoAtaqueEspecial(int danoAtaqueEspecial) {
+        this.danoAtaqueEspecial = danoAtaqueEspecial;
     }
 
     public PlayerBoss() {
     }
 
-    public PlayerBoss(String superpoder) {
-        this.superpoder = superpoder;
+    public PlayerBoss(String nome, int idade, int vida, String falaPersonagem, String ataqueEspecial, int danoAtaqueEspecial) {
+        super(nome, idade, vida, falaPersonagem);
+        this.ataqueEspecial = ataqueEspecial;
+        this.danoAtaqueEspecial = danoAtaqueEspecial;
     }
 
     @Override
     public String toString() {
-        return super.toString() + "\nPlayerBoss superpoder = " + superpoder + "]";
+        return "PlayerBoss{" +
+                "ataqueEspecial='" + ataqueEspecial + '\'' +
+                ", danoAtaqueEspecial=" + danoAtaqueEspecial +
+                '}';
     }
-
-    
 }

@@ -1,7 +1,7 @@
 public class Personagem {
     
-    private int idade;
     private String nome;
+    private int idade;
     private int vida;
     private String falaPersonagem;
 
@@ -10,9 +10,9 @@ public class Personagem {
     }
     
     
-    public Personagem(int idade, String nome, int vida, String falaPersonagem) {
-        this.idade = idade;
+    public Personagem(String nome, int idade, int vida, String falaPersonagem) {
         this.nome = nome;
+        this.idade = idade;
         this.vida = vida;
         this.falaPersonagem = falaPersonagem;
     }
@@ -45,13 +45,10 @@ public class Personagem {
     public void setFalaPersonagem(String falaPersonagem) {
         this.falaPersonagem = falaPersonagem;
     }
-    
+
     @Override
     public String toString() {
-        return "Personagem [idade=" + idade + ", nome=" + nome + ", vida=" + vida + "]";
+        String text = "Personagem:\nidade:" + idade + "\nnome=" + nome + "\nvida=" + vida + "\nfalaPersonagem=" + falaPersonagem;
+        return text;
     }
-
-
-
-
 }

@@ -10,7 +10,8 @@ public class Npc extends Personagem{
         this.profissao = profissao;
     }
 
-    public Npc(String profissao) {
+    public Npc(String nome, int idade, int vida, String falaPersonagem, String profissao) {
+        super(nome, idade, vida,falaPersonagem);
         this.profissao = profissao;
     }
 
