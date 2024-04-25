@@ -13,13 +13,36 @@ public class Cadastro{
         return listaPersonagem;
     }
 
-    public static Personagem buscar(String nome) {
+    public static Personagem excluir(String nome){
 
-        // percorrer a lista de funcionarios
+        // percorrer a lista de personagens
         for (Personagem tempPersonagem : listaPersonagem) {
 
             
-            if (tempPersonagem.getNome() == nome) {
+            if (tempPersonagem.getNome().equals(nome)) {
+
+                return tempPersonagem;
+                
+            }
+        }
+       
+        return null; 
+
+    }
+
+    public static void excluirTodos(){
+        
+        getListaPersonagems().clear();
+       
+    }
+
+    public static Personagem buscar(String nome) {
+
+        // percorrer a lista de personagens
+        for (Personagem tempPersonagem : listaPersonagem) {
+
+            
+            if (tempPersonagem.getNome().equals(nome)) {
 
                 
                 return tempPersonagem;

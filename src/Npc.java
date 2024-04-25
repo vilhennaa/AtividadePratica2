@@ -20,7 +20,7 @@ public class Npc extends Personagem{
 
     @Override
     public String toString() {
-        return super.toString() + "Npc profissao = " + profissao + "]";
+        return super.toString() + "\nProfissão do NPC: " + profissao;
     }
     
 }

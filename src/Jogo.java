@@ -2,22 +2,25 @@ public class Jogo {
 
     //metodo para mostrar o menu
     private static void menu() {
-        System.out.println("ELITE");
+        System.out.println("\n=-=-=-=-==-=-=- ELITE =-=-=-=-==-=-=-");
         System.out.println("1) Novo Elite Player");
         System.out.println("2) Novo NPC");
         System.out.println("3) Novo Boss");
-        System.out.println("4) Procurar Personagem");
-        System.out.println("5) Listar Personagens");
+        System.out.println("4) Batalhar");
+        System.out.println("5) Listar/Excluir Personagens");
         System.out.println("0) Sair");
+        System.out.println("=-=-=-=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-");
     }
 
     //metodo para mostrar o menu de listar ou excluir personagens
     private static void menuListarExcluir() {
+        System.out.println("\n-----------------------------------");
         System.out.println("1) Listar um Personagem específico");
         System.out.println("2) Listar todos os Personagens");
         System.out.println("3) Excluir um Personagem específico");
         System.out.println("4) Excluir todos os Personagem");
         System.out.println("0) Voltar ao menu principal");
+        System.out.println("-----------------------------------");
     }
 
     //metodo para verificar a opção escolhida no menu
@@ -42,7 +45,7 @@ public class Jogo {
                 pe1.setAtaque(Console.lerInt());
                 //adicionar na lista
                 Cadastro.cadastrar(pe1);
-                System.out.println("Player Elite cadastrado com sucesso!!!");
+                System.out.println("\nPlayer Elite cadastrado com sucesso!!!");
                 break;
 
             //Criar novo personagem do tipo NPC
@@ -78,7 +81,7 @@ public class Jogo {
                 boss.setFalaPersonagem(Console.lerString());
                 System.out.print("Ataque Especial do Boss: ");
                 boss.setAtaqueEspecial(Console.lerString());
-                System.out.println("Dano do Ataque Especial do Boss: ");
+                System.out.print("Dano do Ataque Especial do Boss: ");
                 boss.setAtaqueEspecial(Console.lerString());
                 //adicionar da lista
                 Cadastro.cadastrar(boss);
@@ -92,22 +95,26 @@ public class Jogo {
 
             // abre o menu interno
             case 5:
-                System.out.println("\nListar/Excluir Personagens:");
                 menuListarExcluir();
                 int op2 = Console.lerInt();
-                do {
+                //do {
                     switch (op2){
                         // Procura por um personagem especifico
                         case 1:
                             System.out.println("\nProcurar Personagem:");
                             System.out.println("Digite o nome do personagem: ");
-                            Personagem p = Cadastro.buscar(Console.lerString());
+
+                            String nome = Console.lerString();
+                            Personagem p = Cadastro.buscar(nome);
 
                             if (p != null){
+                                System.out.println("\npersonagem localizado!");
                                 System.out.println(p.toString());
                                 return;
                             }
+
                             System.out.println("\nPersonagem não encontrado");
+
                             break;
 
                         // lista todos os personagens
@@ -125,13 +132,22 @@ public class Jogo {
                         // Exclui um personagem especifico
                         case 3:
                             System.out.println("\nExcluir um Personagem:");
+                            System.out.println("Digite o nome do personagem que deseja excluir: ");
+                            nome = Console.lerString();
+                            Personagem personagemExcluir = Cadastro.excluir(nome);
 
+                            if (personagemExcluir != null){
+                                Cadastro.getListaPersonagems().remove(personagemExcluir);
+                                System.out.println("personagem excluido com sucesso!!!");
+                                return;
+                            }
+                            System.out.println("\nPersonagem não encontrado");
                             break;
 
                         // Exclui todos os personagens
                         case 4:
-                            System.out.println("\nExcluir todos os Personagems");
-
+                            Cadastro.excluirTodos();
+                            System.out.println("\nPersonagens excluidos com sucesso! \nSua lista de personagens está vazia...");
                             break;
 
                         case 0:
@@ -142,7 +158,7 @@ public class Jogo {
                             System.out.println("\nOpção invalida, digite novamtente");
                             break;
                     }
-                } while (op2 != 0);
+                //} while (op2 != 0);
                 break;
 
             case 0:

@@ -30,9 +30,6 @@ public class PlayerBoss extends Personagem {
 
     @Override
     public String toString() {
-        return "PlayerBoss{" +
-                "ataqueEspecial='" + ataqueEspecial + '\'' +
-                ", danoAtaqueEspecial=" + danoAtaqueEspecial +
-                '}';
+        return super.toString() + "\nAtaque especial do Boss: " + ataqueEspecial + "\nDano do ataque especial do Boss: " + danoAtaqueEspecial;
     }
 }

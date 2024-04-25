@@ -28,7 +28,7 @@ public class PlayerElite extends Personagem {
 
     @Override
     public String toString() {
-        return super.toString() + "\nclasse=" + classe + ", ataque=" + ataque + "]";
+        return super.toString() + "\nClasse: " + classe + "\nAtaque: " + ataque;
     }
 
 }

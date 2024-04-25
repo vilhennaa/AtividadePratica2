@@ -48,7 +48,7 @@ public class Personagem {
 
     @Override
     public String toString() {
-        String text = "Personagem:\nidade:" + idade + "\nnome=" + nome + "\nvida=" + vida + "\nfalaPersonagem=" + falaPersonagem;
+        String text = "\nNome: " + nome + "\nIdade: " + idade + "\nVida: " + vida + "\nFala do personagem: " + falaPersonagem;
         return text;
     }
 }
