@@ -1,9 +1,8 @@
-// Gustavo Cotovivz
-// Felipe Diffonte schmidt
-
 /*
-* Programa que Lista personagens diferindo-os entre player, npc e Boss
-* com combate e afins.
+* Gustavo Cotovivz
+* Felipe Diffonte Schmidt
+
+* Programa que Lista personagens diferindo-os entre player, npc e Boss.
 */
 
 public class Main {

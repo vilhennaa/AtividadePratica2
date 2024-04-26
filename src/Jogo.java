@@ -6,8 +6,7 @@ public class Jogo {
         System.out.println("1) Novo Elite Player");
         System.out.println("2) Novo NPC");
         System.out.println("3) Novo Boss");
-        System.out.println("4) Batalhar");
-        System.out.println("5) Listar/Excluir Personagens");
+        System.out.println("4) Listar/Excluir Personagens");
         System.out.println("0) Sair");
         System.out.println("=-=-=-=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-");
     }
@@ -33,6 +32,10 @@ public class Jogo {
                 System.out.println("\nNovo Elite Player:");
                 System.out.print("Nome: ");
                 pe1.setNome(Console.lerString());
+                if (Cadastro.validarNomePersonagem(pe1.getNome()) == false){
+                    System.out.println("\nPersonagem ja cadastrado");
+                    return;
+                }
                 System.out.print("Idade: ");
                 pe1.setIdade(Console.lerInt());
                 System.out.print("Vida: ");
@@ -54,6 +57,10 @@ public class Jogo {
                 System.out.println("\nNovo NPC:");
                 System.out.print("Nome: ");
                 npc1.setNome(Console.lerString());
+                if (Cadastro.validarNomePersonagem(npc1.getNome()) == false){
+                    System.out.println("\nPersonagem ja cadastrado");
+                    return;
+                }
                 System.out.print("Idade: ");
                 npc1.setIdade(Console.lerInt());
                 System.out.print("Vida: ");
@@ -73,6 +80,10 @@ public class Jogo {
                 System.out.println("\nNovo Boss:");
                 System.out.print("Nome: ");
                 boss.setNome(Console.lerString());
+                if (Cadastro.validarNomePersonagem(boss.getNome()) == false){
+                    System.out.println("\nPersonagem ja cadastrado");
+                    return;
+                }
                 System.out.print("Idade: ");
                 boss.setIdade(Console.lerInt());
                 System.out.print("Vida: ");
@@ -89,14 +100,10 @@ public class Jogo {
                 break;
 
             case 4:
-                System.out.println("\nBatalhar:");
-
-                break;
-
             // abre o menu interno
-            case 5:
                 menuListarExcluir();
                 int op2 = Console.lerInt();
+                String nome;
                 //do {
                     switch (op2){
                         // Procura por um personagem especifico
@@ -104,7 +111,7 @@ public class Jogo {
                             System.out.println("\nProcurar Personagem:");
                             System.out.println("Digite o nome do personagem: ");
 
-                            String nome = Console.lerString();
+                            nome = Console.lerString();
                             Personagem p = Cadastro.buscar(nome);
 
                             if (p != null){
